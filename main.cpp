@@ -2,13 +2,7 @@
 
 class Singleton {
  public:
-  static Singleton *getObject() {
-    if (object == nullptr) {
-      object = new Singleton();
-    }
-
-    return object;
-  }
+  static Singleton *getObject();
 
  private:
   Singleton() {}
@@ -16,6 +10,14 @@ class Singleton {
 
   static Singleton *object;
 };
+
+Singleton *Singleton::getObject() {
+  if (object == nullptr) {
+    object = new Singleton();
+  }
+
+  return object;
+}
 
 Singleton *Singleton::object = nullptr;
 
