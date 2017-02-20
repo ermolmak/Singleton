@@ -3,6 +3,10 @@
 class Singleton {
  public:
   static Singleton *getObject() {
+    if (object == nullptr) {
+      object = new Singleton();
+    }
+
     return object;
   }
 
@@ -12,6 +16,8 @@ class Singleton {
 
   static Singleton *object;
 };
+
+Singleton *Singleton::object = nullptr;
 
 int main() {
   return 0;
