@@ -16,9 +16,8 @@ class Singleton {
 };
 
 Singleton *Singleton::getObject() {
-  static Singleton *object = new Singleton();
-  
-  return object;
+  static Singleton object;
+  return &object;
 }
 
 std::chrono::system_clock::time_point Singleton::getTime() {
